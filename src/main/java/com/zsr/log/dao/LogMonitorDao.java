@@ -9,6 +9,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 public class LogMonitorDao {
     private JdbcTemplate jdbcTemplate;
@@ -39,6 +40,11 @@ public class LogMonitorDao {
         String sql = "select id, name, keyword, isValid, appId from log_monitor_rule where isValid = 1";
         return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Rule.class));
     }
+    /**
+     * 分组查询规则信息
+     * zhege buhui
+     * appId分组
+     */
 
     /**
      * 查询应用程序的信息
